@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Provide Kanban Tool API Key
+  body
+    h1 Kanban Tool API Key
+
+    p Please complete the following form to attach your Kanban Tool API key to your matrix user <b>#{matrix_user}</b>.
+
+    form(action='do_login', method='POST')
+      input(type="hidden", name="auth_request", value=auth_request)
+      p
+        label(for="domain") Your Kanban Tool subdomain:
+        input(type="text", placeholder="domain", name="domain")
+        | .kanbantool.com
+
+      p
+        label(for="api_key") Your Kanban Tool API key (via My Profile -> API access):
+        input(type="text", placeholder="Your API Key", name="api_key")
+
+      p
+        input(type="submit")
+

@@ -1,0 +1,10 @@
+node_modules/
+matrix-bot-config.js
+matrix-bot-bitmessage-callback.sh
+localstorage/
+*.sqlite
+.DS_Store
+.idea
+*.log
+*.tmp
+*.swp

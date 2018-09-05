@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title Webhook in Room #{session_data.room_name} (#{session_data.room_id})
+  body
+    h1 Webhook in Room #{session_data.room_name} (#{session_data.room_id})
+
+    p
+      a(href=my_server + 'admin/?admin_request=' + admin_request) &lt;&lt; Back to overview
+
+    p(style='font-weight: bold;' + (form_data.notice ? '' : 'display: none;'))= form_data.notice
+
+    div(style=(webhook_id === 'new' ? 'display: none;' : ''))
+      p(style='font-weight: bold; color: #ff0000;') Webhook URL: #{my_server}#{webhook_id}
+
+      p You can now use this URL to send webhook requests which will be announced (using the template specified above) in your room.
+
+      p You can either <code>GET</code> these URL and provide parameters for your template as query string ("<code>?param1=abc&amp;param2=def</code>"). Or you can <code>POST</code> to this URL, either with a query string in the body (and a content type header of <code>application/x-www-form-urlencoded</code>) or with JSON data in the body (and a content type header of <code>application/json</code>).
+
+
+    h2 Webhook Settings
+
+    form(action=webhook_id, method='POST')
+      input(type="hidden", name="admin_request", value=admin_request)
+
+      p
+        label(for="name") Name:
+        input(type="text", placeholder="Name of the webhook", name="name", value=form_data.name)
+
+      p
+        label(for="template") Template:
+        br
+        textarea(placeholder="Template for your webhook", name="template", rows=10, cols=60)= form_data.template
+
+      p The template will be used to relay any webhook requests to your room. It should contain <code>{{variablename}}</code> placeholders for any request variable that should be inserted. If your webhook receives nested JSON data, you can use forward slashes (`/`) to travers the hierarchy.
+
+      p
+        input(type="checkbox", name="active", value="yes" checked=(form_data.active ? true : false))
+        label(for="active") This webhook is active and can receive requests
+
+      p
+        button(type="submit", name="action", value="save") Save this webhook
+
+      p(style=(webhook_id === 'new' ? 'display: none;' : ''))
+        button(type="submit", name="action", value="delete" onclick="return confirm('Are you sure? Deleting a webhook is irreversible, as any newly created webhook will receive a new URL to be called.');") Delete this webhook

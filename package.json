@@ -1,0 +1,33 @@
+{
+  "name": "hello-matrix-bot",
+  "version": "0.0.4",
+  "description": "A useful bot for Matrix.org.",
+  "author": "Alex <ar@emergingculture.net>",
+  "main": "matrix-bot.js",
+  "scripts": {
+    "start": "node matrix-bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/argit/hello-matrix-bot.git"
+  },
+  "dependencies": {
+    "base64-js": "^1.2.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jssha": "^2.3.1",
+    "matrix-js-sdk": "^0.7.13",
+    "node-localstorage": "^1.3.0",
+    "ntwitter": "^0.5.0",
+    "olm": "https://matrix.org/packages/npm/olm/olm-2.2.2.tgz",
+    "pug": "^2.0.0-beta6",
+    "q": "^1.4.1",
+    "q-sqlite3": "^0.1.3",
+    "request": "^2.78.0",
+    "sqlite3": "^3.1.8",
+    "text-encoding": "^0.6.1",
+    "xml2js": "^0.4.17",
+    "xmlrpc": "^1.3.2"
+  },
+  "license": "MIT"
+}

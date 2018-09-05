@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Webhook Management for Room #{session_data.room_name} (#{session_data.room_id})
+  body
+    h1 Webhook Management for Room #{session_data.room_name} (#{session_data.room_id})
+
+    p(style='font-weight: bold;' + (notice ? '' : 'display: none;'))= notice
+
+    p The following webhooks are currently registered for this room:
+
+    ul
+      each webhook in webhook_list
+        li
+          a(href=webhook.id + "?admin_request=" + admin_request) #{webhook.name}
+          | &nbsp;(last triggered: #{webhook.last_triggered ? (new Date(webhook.last_triggered)).toISOString() : 'never'})
+
+      li
+        a(href="new?admin_request=" + admin_request) Add new webhook
+
