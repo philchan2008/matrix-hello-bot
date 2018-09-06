@@ -40,6 +40,7 @@ var botModules = {};
 botModules['calculate'] = require("./bot-modules/calculate.js");
 botModules['dice'] = require('./bot-modules/dice.js');
 botModules['help'] = require("./bot-modules/help.js");
+botModules['vpn'] = require("./bot-modules/vpn.js");
 //botModules['kanban'] = require("./bot-modules/kanban.js");
 botModules['kb'] = require("./bot-modules/kanboard.js");
 //botModules['kanboard'] = require("./bot-modules/kanboard.js");
