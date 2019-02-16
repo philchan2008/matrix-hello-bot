@@ -14,5 +14,10 @@ var qRequest = q.denodeify(request);
 
 exports.getHelp = function(details) {
   return 'You can use !vpn manage your VPN keys:\n' +
+<<<<<<< HEAD
          '!vpn renew - Renew vpn key. (Not yet finished)\n'
+=======
+         '!vpn renew - Renew vpn key. (Not yet finished)\n' +
+         'Chat to #phil:flexhk.sky-computers.com for help.\n'
+>>>>>>> 8f1aa5b4a9e121488768f9ff92ea3754447edbce
 };

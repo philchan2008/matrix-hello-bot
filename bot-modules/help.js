@@ -2,35 +2,38 @@
 
 var helpModules = {};
 
-var bitmessage = require("./bitmessage.js");
+//var bitmessage = require("./bitmessage.js");
 //helpModules['bitmessage'] = bitmessage.getHelp;
 
-var calculate = require("./calculate.js");
+//var calculate = require("./calculate.js");//
 //helpModules['calculate'] = calculate.getHelp;
 
 var dice = require("./dice.js");
 helpModules['dice'] = dice.getHelp;
 
-var kanban = require("./kanban.js");
+//var kanban = require("./kanban.js");
 //helpModules['kanban'] = kanban.getHelp;
 
-var senddm = require("./senddm.js");
+//var senddm = require("./senddm.js");
 //helpModules['senddm'] = senddm.getHelp;
 
-var traceroute = require("./traceroute.js");
-helpModules['traceroute'] = traceroute.getHelp;
+//var traceroute = require("./traceroute.js");
+//helpModules['traceroute'] = traceroute.getHelp;
 
 var weather = require("./weather.js");
 helpModules['weather'] = weather.getHelp;
 
-var weather = require("./webhook.js");
-helpModules['webhook'] = weather.getHelp;
+//var webhook = require("./webhook.js");
+//helpModules['webhook'] = webhook.getHelp;
 
-var whois = require("./whois.js");
-helpModules['whois'] = whois.getHelp;
+//var whois = require("./whois.js");
+//helpModules['whois'] = whois.getHelp;
 
-var wunderlist = require("./wunderlist.js");
+//var wunderlist = require("./wunderlist.js");
 //helpModules['wunderlist'] = wunderlist.getHelp;
+
+var vpn = require("./vpn.js");
+helpModules['vpn'] = vpn.getHelp;
 
 
 exports.runQuery = function(client, query, querySender, queryRoom) {
@@ -50,7 +53,7 @@ exports.runQuery = function(client, query, querySender, queryRoom) {
     Object.keys(helpModules).forEach(function(k) {
       line += '!help ' + k + '\n';
     });
-    
+
     line += '\nIf you want me to help you in your own Matrix room, just invite me and I will join automatically. You do no longer want me in your room? Just kick me out.';
   }
 
